@@ -30,7 +30,7 @@
       </nav>
       <a href="#top" class="nav__logo" aria-label="LeLuxe Dermsolutions — home"><img src="assets/mark.png" alt="LeLuxe Dermsolutions" /></a>
       <div class="nav__actions">
-        <a href="#contact" class="btn nav__cta">Book Consultation</a>
+        <a href="#contact" data-book class="btn nav__cta">Book Consultation</a>
       </div>
       <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
@@ -47,7 +47,7 @@
           <p class="hero__eyebrow">Doctor-Led Skin Care · Carmona &amp; Imus, Cavite</p>
           <h1 class="hero__title"><span class="script">Discover Your True Beauty</span></h1>
           <p class="hero__sub">A doctor-led skin clinic and home of Cavite's first Juvelook skin booster — curated dermatological &amp; aesthetic care, by appointment.</p>
-          <a href="#contact" class="btn btn--light hero__cta">Book a Consultation</a>
+          <a href="#contact" data-book class="btn btn--light hero__cta">Book a Consultation</a>
         </div>
       </div>
     </section>
@@ -72,7 +72,7 @@
             <h3>The LeLuxe Story</h3>
             <p>LeLuxe Dermsolutions was built on a simple belief: real beauty should look like <em>you</em>, only more confident and radiant. Every plan begins with a doctor's consultation and an honest assessment of your skin.</p>
             <p>From signature facials to our biostimulating Juvelook skin booster, each treatment is chosen to enhance your skin's own quality and glow — restoring, never masking.</p>
-            <a href="#contact" class="btn btn--gold">Book a Consultation</a>
+            <a href="#contact" data-book class="btn btn--gold">Book a Consultation</a>
           </div>
           <div class="story__media reveal" style="--d:.1s">
             <img src="assets/treatment.jpg" alt="A clinical facial treatment in progress at LeLuxe" />
@@ -100,7 +100,7 @@
                 <li>Hydrating skin boosters &amp; rejuvenation</li>
                 <li>Brighter, well-rested complexion</li>
               </ul>
-              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+              <a href="#contact" data-book class="btn btn--light">Book a Consultation</a>
             </div>
           </div>
         </article>
@@ -118,7 +118,7 @@
                 <li>Targeted care for acne, warts &amp; blemishes</li>
                 <li>Melasma &amp; pigment protocols</li>
               </ul>
-              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+              <a href="#contact" data-book class="btn btn--light">Book a Consultation</a>
             </div>
           </div>
         </article>
@@ -136,7 +136,7 @@
                 <li>Collagen-supporting rejuvenation</li>
                 <li>Natural-looking, gradual results</li>
               </ul>
-              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+              <a href="#contact" data-book class="btn btn--light">Book a Consultation</a>
             </div>
           </div>
         </article>
@@ -238,6 +238,53 @@
       </div>
     </div>
   </footer>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal" id="booking" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__card" role="dialog" aria-modal="true" aria-label="Book a consultation">
+      <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
+      <p class="modal__eyebrow">LeLuxe Dermsolutions</p>
+      <h3 class="modal__title">Book a Consultation</h3>
+      <p class="modal__sub">Choose a branch, date and time — we'll confirm your slot by phone or Viber.</p>
+
+      <div class="bk__field">
+        <span class="bk__label">Branch</span>
+        <div class="bk__branches" id="bkBranches">
+          <button type="button" class="bk__branch is-sel" data-branch="Carmona">Carmona</button>
+          <button type="button" class="bk__branch" data-branch="Imus">Imus</button>
+        </div>
+      </div>
+
+      <div class="bk__field">
+        <div class="bk__cal-head">
+          <button type="button" class="bk__nav" data-cal="-1" aria-label="Previous month">&lsaquo;</button>
+          <span class="bk__month" id="bkMonth"></span>
+          <button type="button" class="bk__nav" data-cal="1" aria-label="Next month">&rsaquo;</button>
+        </div>
+        <div class="bk__dow"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+        <div class="bk__grid" id="bkGrid"></div>
+      </div>
+
+      <div class="bk__field">
+        <span class="bk__label">Time</span>
+        <div class="bk__slots" id="bkSlots"></div>
+      </div>
+
+      <div class="bk__field bk__inputs">
+        <input type="text" id="bkName" placeholder="Your name" aria-label="Your name" />
+        <input type="tel" id="bkPhone" placeholder="Mobile number" aria-label="Mobile number" />
+      </div>
+
+      <p class="bk__summary" id="bkSummary">Select a branch, date and time to continue.</p>
+
+      <div class="bk__actions">
+        <a class="btn btn--gold bk__send" id="bkSms" href="#" aria-disabled="true">Send via SMS / Viber</a>
+        <a class="btn btn--ghost" id="bkFb" href="https://m.me/leluxe.dermsolutions" target="_blank" rel="noopener">Messenger</a>
+        <a class="btn btn--ghost" id="bkCall" href="tel:+639171043624">Call</a>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
