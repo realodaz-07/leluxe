@@ -25,6 +25,18 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* expanding panels — click to expand (one active at a time) */
+  var panels = document.querySelectorAll('[data-panel]');
+  panels.forEach(function (p) {
+    p.addEventListener('click', function (e) {
+      // let the CTA link work without hijacking, but still expand
+      if (p.classList.contains('is-active') && e.target.closest('a')) return;
+      if (e.target.closest('a') && !p.classList.contains('is-active')) e.preventDefault();
+      panels.forEach(function (x) { x.classList.remove('is-active'); });
+      p.classList.add('is-active');
+    });
+  });
+
   /* mobile menu */
   var burger = document.querySelector('.nav__burger');
   var links = document.querySelector('.nav__links');

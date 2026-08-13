@@ -64,69 +64,85 @@
       </div>
     </section>
 
-    <!-- SPLIT (colored editorial panel) -->
-    <section class="split">
-      <div class="split__card reveal">
-        <p class="split__cap">The philosophy behind LeLuxe</p>
-        <div class="split__grid">
-          <div class="split__text">
+    <!-- STORY (boxless editorial) -->
+    <section class="story">
+      <div class="story__wrap">
+        <p class="story__cap reveal">The philosophy behind LeLuxe</p>
+        <div class="story__grid">
+          <div class="story__text reveal">
             <h3>The LeLuxe Story</h3>
             <p>LeLuxe Dermsolutions was built on a simple belief: real beauty should look like <em>you</em>, only more confident and radiant. Every plan begins with a doctor's consultation and an honest assessment of your skin.</p>
             <p>From signature facials to our biostimulating Juvelook skin booster, each treatment is chosen to enhance your skin's own quality and glow — restoring, never masking.</p>
             <a href="#contact" class="btn btn--gold">Book a Consultation</a>
           </div>
-          <div class="split__media">
+          <div class="story__media reveal" style="--d:.1s">
             <img src="assets/treatment.jpg" alt="A clinical facial treatment in progress at LeLuxe" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GUESTS / FOR-YOU FEATURE CARDS -->
-    <section class="guests" id="guests">
+    <!-- PANELS (full-width, portrait, click to expand) -->
+    <section class="panels" id="guests">
       <h2 class="ctitle reveal"><span class="script">LeLuxe</span>: the right place<br />for every skin</h2>
+      <p class="panels__hint reveal" style="--d:.06s">Tap a panel to explore</p>
+      <div class="panels__row reveal" style="--d:.1s">
 
-      <article class="gcard reveal">
-        <div class="gcard__text">
-          <h3>For glow &amp; radiance</h3>
-          <p class="gcard__label">What you'll love</p>
-          <ul class="gcard__list">
-            <li>Signature deep-cleansing facials</li>
-            <li>Hydrating skin boosters &amp; rejuvenation</li>
-            <li>Brighter, well-rested complexion</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
-        </div>
-        <div class="gcard__media"><img src="assets/glow.jpg" alt="Close-up of clear, radiant skin" /></div>
-      </article>
+        <article class="panel is-active" data-panel>
+          <img class="panel__img" src="assets/glow.jpg" alt="Close-up of clear, radiant skin" />
+          <div class="panel__scrim"></div>
+          <div class="panel__inner">
+            <span class="panel__idx">01</span>
+            <h3 class="panel__title">For glow &amp; radiance</h3>
+            <div class="panel__reveal">
+              <p class="panel__lead">What you'll love</p>
+              <ul class="panel__list">
+                <li>Signature deep-cleansing facials</li>
+                <li>Hydrating skin boosters &amp; rejuvenation</li>
+                <li>Brighter, well-rested complexion</li>
+              </ul>
+              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="gcard gcard--reverse reveal">
-        <div class="gcard__text">
-          <h3>For problem &amp; acne-prone skin</h3>
-          <p class="gcard__label">What you'll love</p>
-          <ul class="gcard__list">
-            <li>Doctor-led consultation &amp; skin analysis</li>
-            <li>Targeted care for acne, warts &amp; blemishes</li>
-            <li>Melasma &amp; pigment protocols</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
-        </div>
-        <div class="gcard__media"><img src="assets/editorial.jpg" alt="A soothing facial treatment" /></div>
-      </article>
+        <article class="panel" data-panel>
+          <img class="panel__img" src="assets/editorial.jpg" alt="A soothing facial treatment" />
+          <div class="panel__scrim"></div>
+          <div class="panel__inner">
+            <span class="panel__idx">02</span>
+            <h3 class="panel__title">For problem &amp; acne-prone skin</h3>
+            <div class="panel__reveal">
+              <p class="panel__lead">What you'll love</p>
+              <ul class="panel__list">
+                <li>Doctor-led consultation &amp; skin analysis</li>
+                <li>Targeted care for acne, warts &amp; blemishes</li>
+                <li>Melasma &amp; pigment protocols</li>
+              </ul>
+              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+            </div>
+          </div>
+        </article>
 
-      <article class="gcard reveal">
-        <div class="gcard__text">
-          <h3>For anti-aging &amp; renewal</h3>
-          <p class="gcard__label">What you'll love</p>
-          <ul class="gcard__list">
-            <li>Juvelook biostimulating skin booster</li>
-            <li>Collagen-supporting rejuvenation</li>
-            <li>Natural-looking, gradual results</li>
-          </ul>
-          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
-        </div>
-        <div class="gcard__media"><img src="assets/circle.jpg" alt="A relaxing rejuvenation facial" /></div>
-      </article>
+        <article class="panel" data-panel>
+          <img class="panel__img" src="assets/circle.jpg" alt="A relaxing rejuvenation facial" />
+          <div class="panel__scrim"></div>
+          <div class="panel__inner">
+            <span class="panel__idx">03</span>
+            <h3 class="panel__title">For anti-aging &amp; renewal</h3>
+            <div class="panel__reveal">
+              <p class="panel__lead">What you'll love</p>
+              <ul class="panel__list">
+                <li>Juvelook biostimulating skin booster</li>
+                <li>Collagen-supporting rejuvenation</li>
+                <li>Natural-looking, gradual results</li>
+              </ul>
+              <a href="#contact" class="btn btn--light">Book a Consultation</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
     </section>
 
     <!-- TREATMENTS -->
@@ -138,32 +154,32 @@
       </div>
       <div class="treatments__grid">
         <article class="tcard reveal" style="--d:.04s">
-          <p class="tcard__num">01</p><h3>Doctor's Consultation</h3>
+          <h3>Doctor's Consultation</h3>
           <p>A thorough skin assessment and an honest, personalised plan with Doc Genie. By appointment.</p>
           <span class="tcard__tag">Assessment · Planning</span>
         </article>
         <article class="tcard reveal" style="--d:.1s">
-          <p class="tcard__num">02</p><h3>Juvelook Skin Booster</h3>
+          <h3>Juvelook Skin Booster</h3>
           <p>Cavite's first Juvelook — a biostimulating booster for skin quality, texture and radiance.</p>
           <span class="tcard__tag">Biostimulating · Signature</span>
         </article>
         <article class="tcard reveal" style="--d:.16s">
-          <p class="tcard__num">03</p><h3>Signature Facials</h3>
+          <h3>Signature Facials</h3>
           <p>Deep-cleansing and rejuvenating facials for a clearer, brighter, well-rested complexion.</p>
           <span class="tcard__tag">Cleanse · Glow</span>
         </article>
         <article class="tcard reveal" style="--d:.04s">
-          <p class="tcard__num">04</p><h3>Laser &amp; Pigment Care</h3>
+          <h3>Laser &amp; Pigment Care</h3>
           <p>Targeted protocols to fade melasma, dark spots and uneven tone, safely.</p>
           <span class="tcard__tag">Brightening · Even Tone</span>
         </article>
         <article class="tcard reveal" style="--d:.1s">
-          <p class="tcard__num">05</p><h3>Skin Boosters &amp; Rejuvenation</h3>
+          <h3>Skin Boosters &amp; Rejuvenation</h3>
           <p>Deep hydration and rejuvenation that restore bounce, luminosity and healthy skin quality.</p>
           <span class="tcard__tag">Hydration · Radiance</span>
         </article>
         <article class="tcard reveal" style="--d:.16s">
-          <p class="tcard__num">06</p><h3>Blemish &amp; Skin Care</h3>
+          <h3>Blemish &amp; Skin Care</h3>
           <p>Doctor-led care for warts, skin tags, acne and other common concerns.</p>
           <span class="tcard__tag">Clear · Comfortable</span>
         </article>
