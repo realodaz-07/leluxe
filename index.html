@@ -13,96 +13,120 @@
   <link rel="icon" type="image/png" href="assets/mark.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
   <script>document.documentElement.className += ' js';</script>
 </head>
-<body>
+<body id="top">
 
-  <!-- Nav (floats over hero) -->
+  <!-- Nav (floating pill; centered emblem) -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#top" class="nav__logo" aria-label="LeLuxe Dermsolutions — home"><img src="assets/logo-mark.png" alt="LeLuxe Dermsolutions" /></a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#about">About</a>
         <a href="#treatments">Treatments</a>
-        <a href="#process">Your Visit</a>
-        <a href="#contact">Contact</a>
+        <a href="#guests">For You</a>
       </nav>
-      <a href="#contact" class="btn nav__cta">Book Consultation</a>
+      <a href="#top" class="nav__logo" aria-label="LeLuxe Dermsolutions — home"><img src="assets/mark.png" alt="LeLuxe Dermsolutions" /></a>
+      <div class="nav__actions">
+        <a href="tel:+639171043624" class="nav__phone">0917 104 3624</a>
+        <a href="#contact" class="btn nav__cta">Book Consultation</a>
+      </div>
       <button class="nav__burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
-  <main id="top">
+  <main>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-      <div class="hero__frame">
+    <!-- HERO (contained rounded card) -->
+    <section class="hero">
+      <div class="hero__card reveal">
         <img class="hero__img" src="assets/hero.jpg" alt="A woman receiving a calming facial treatment at a skin clinic" />
         <div class="hero__scrim"></div>
-        <p class="hero__eyebrow reveal">Doctor-Led Skin Care · Carmona &amp; Imus, Cavite</p>
-        <div class="hero__lead">
-          <h1 class="hero__title reveal" style="--d:.06s">Discover Your<br />True Beauty</h1>
-          <p class="hero__sub reveal" style="--d:.14s">A doctor-led skin clinic — home of Cavite's first Juvelook skin booster. Curated dermatological &amp; aesthetic treatments, by appointment.</p>
-          <a href="#contact" class="btn btn--gold reveal" style="--d:.2s">Book a Consultation</a>
+        <div class="hero__content">
+          <p class="hero__eyebrow">Doctor-Led Skin Care · Carmona &amp; Imus, Cavite</p>
+          <h1 class="hero__title"><span class="script">Discover Your True Beauty</span></h1>
+          <p class="hero__sub">A doctor-led skin clinic and home of Cavite's first Juvelook skin booster — curated dermatological &amp; aesthetic care, by appointment.</p>
+          <a href="#contact" class="btn btn--light hero__cta">Book a Consultation</a>
         </div>
       </div>
     </section>
 
-    <!-- FEATURED / TRUST BAND (dark) -->
-    <section class="feat">
-      <div class="feat__inner reveal">
-        <span class="feat__label">Trusted for</span>
-        <div class="feat__items">
-          <span>Doctor-Led Care</span>
-          <span class="feat__dot">·</span>
-          <span>Cavite's First Juvelook</span>
-          <span class="feat__dot">·</span>
-          <span>Carmona &amp; Imus Branches</span>
-          <span class="feat__dot">·</span>
-          <span>Open Daily</span>
-        </div>
+    <!-- WHY (centered heading + pill tabs) -->
+    <section class="why" id="about">
+      <h2 class="ctitle reveal">Why <span class="script">LeLuxe</span><br />is more than a clinic</h2>
+      <p class="why__sub reveal" style="--d:.08s">Led by Doc Genie, every visit blends real dermatological expertise with a warm, unhurried experience — care shaped around your skin, never a template.</p>
+      <div class="pills reveal" style="--d:.14s">
+        <span class="pill">Doctor-Led</span>
+        <span class="pill">Cavite's First Juvelook</span>
+        <span class="pill">Personalized Care</span>
       </div>
     </section>
 
-    <!-- STORY (dark editorial) -->
-    <section class="story">
-      <div class="story__inner">
-        <div class="story__head">
-          <p class="kicker kicker--light reveal">The philosophy behind LeLuxe</p>
-          <h2 class="reveal" style="--d:.08s">From dull and tired,<br />to clear and glowing.</h2>
-        </div>
-        <div class="story__media reveal" style="--d:.12s">
-          <img src="assets/editorial.jpg" alt="Close-up of a relaxing facial treatment" />
-          <div class="story__card">
-            <p>Led by Doc Genie, LeLuxe Dermsolutions pairs advanced dermatological treatments with a warm, unhurried experience. Every plan begins with a real consultation and an honest assessment of your skin — never a template. From facials to our signature Juvelook skin booster, each service is chosen to enhance your skin's own quality and glow.</p>
+    <!-- SPLIT (colored editorial panel) -->
+    <section class="split">
+      <div class="split__card reveal">
+        <p class="split__cap">The philosophy behind LeLuxe</p>
+        <div class="split__grid">
+          <div class="split__text">
+            <h3>The LeLuxe Story</h3>
+            <p>LeLuxe Dermsolutions was built on a simple belief: real beauty should look like <em>you</em>, only more confident and radiant. Every plan begins with a doctor's consultation and an honest assessment of your skin.</p>
+            <p>From signature facials to our biostimulating Juvelook skin booster, each treatment is chosen to enhance your skin's own quality and glow — restoring, never masking.</p>
+            <a href="#contact" class="btn btn--gold">Book a Consultation</a>
+          </div>
+          <div class="split__media">
+            <img src="assets/treatment.jpg" alt="A clinical facial treatment in progress at LeLuxe" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PITCH (circular portrait + copy) -->
-    <section class="pitch" id="about">
-      <div class="pitch__wrap">
-        <p class="kicker pitch__eyebrow reveal">Real care — because your skin is personal</p>
-        <div class="pitch__grid">
-          <div class="pitch__media reveal">
-            <img src="assets/circle.jpg" alt="A calm, glowing facial treatment at LeLuxe" />
-          </div>
-          <div class="pitch__body reveal" style="--d:.1s">
-            <h2>Skin that looks like you,<br />only more radiant.</h2>
-            <p>We believe real beauty should look like <em>you</em>, only more confident and rested. Our treatments work <em>with</em> your skin — enhancing its own quality rather than covering it up.</p>
-            <ul class="pitch__list">
-              <li>Every plan is doctor-led and tailored to your skin and goals.</li>
-              <li>Home of Cavite's first Juvelook biostimulating skin booster.</li>
-              <li>Natural-looking results, with your comfort always first.</li>
-            </ul>
-            <a href="#contact" class="btn btn--solid">Book a Consultation</a>
-          </div>
+    <!-- GUESTS / FOR-YOU FEATURE CARDS -->
+    <section class="guests" id="guests">
+      <h2 class="ctitle reveal"><span class="script">LeLuxe</span>: the right place<br />for every skin</h2>
+
+      <article class="gcard reveal">
+        <div class="gcard__text">
+          <h3>For glow &amp; radiance</h3>
+          <p class="gcard__label">What you'll love</p>
+          <ul class="gcard__list">
+            <li>Signature deep-cleansing facials</li>
+            <li>Hydrating skin boosters &amp; rejuvenation</li>
+            <li>Brighter, well-rested complexion</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
         </div>
-      </div>
+        <div class="gcard__media"><img src="assets/glow.jpg" alt="Close-up of clear, radiant skin" /></div>
+      </article>
+
+      <article class="gcard gcard--reverse reveal">
+        <div class="gcard__text">
+          <h3>For problem &amp; acne-prone skin</h3>
+          <p class="gcard__label">What you'll love</p>
+          <ul class="gcard__list">
+            <li>Doctor-led consultation &amp; skin analysis</li>
+            <li>Targeted care for acne, warts &amp; blemishes</li>
+            <li>Melasma &amp; pigment protocols</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
+        </div>
+        <div class="gcard__media"><img src="assets/editorial.jpg" alt="A soothing facial treatment" /></div>
+      </article>
+
+      <article class="gcard reveal">
+        <div class="gcard__text">
+          <h3>For anti-aging &amp; renewal</h3>
+          <p class="gcard__label">What you'll love</p>
+          <ul class="gcard__list">
+            <li>Juvelook biostimulating skin booster</li>
+            <li>Collagen-supporting rejuvenation</li>
+            <li>Natural-looking, gradual results</li>
+          </ul>
+          <a href="#contact" class="btn btn--ghost">Book a Consultation</a>
+        </div>
+        <div class="gcard__media"><img src="assets/circle.jpg" alt="A relaxing rejuvenation facial" /></div>
+      </article>
     </section>
 
     <!-- TREATMENTS -->
@@ -110,62 +134,39 @@
       <div class="section__head section__head--center">
         <p class="kicker">Our Treatments</p>
         <h2>Curated dermatological &amp; aesthetic care</h2>
-        <p>A focused menu, each treatment recommended only after your consultation. Below is a guide to what we offer.</p>
+        <p>A focused menu, each treatment recommended only after your consultation.</p>
       </div>
       <div class="treatments__grid">
         <article class="tcard reveal" style="--d:.04s">
           <p class="tcard__num">01</p><h3>Doctor's Consultation</h3>
-          <p>Every journey starts here — a thorough skin assessment and an honest, personalised plan with Doc Genie. By appointment.</p>
+          <p>A thorough skin assessment and an honest, personalised plan with Doc Genie. By appointment.</p>
           <span class="tcard__tag">Assessment · Planning</span>
         </article>
         <article class="tcard reveal" style="--d:.1s">
           <p class="tcard__num">02</p><h3>Juvelook Skin Booster</h3>
-          <p>Cavite's first Juvelook — a biostimulating booster that enhances skin quality, texture and radiance with natural-looking results.</p>
+          <p>Cavite's first Juvelook — a biostimulating booster for skin quality, texture and radiance.</p>
           <span class="tcard__tag">Biostimulating · Signature</span>
         </article>
         <article class="tcard reveal" style="--d:.16s">
           <p class="tcard__num">03</p><h3>Signature Facials</h3>
-          <p>Deep-cleansing and rejuvenating facials tailored to your skin — for a clearer, brighter, well-rested complexion.</p>
+          <p>Deep-cleansing and rejuvenating facials for a clearer, brighter, well-rested complexion.</p>
           <span class="tcard__tag">Cleanse · Glow</span>
         </article>
         <article class="tcard reveal" style="--d:.04s">
           <p class="tcard__num">04</p><h3>Laser &amp; Pigment Care</h3>
-          <p>Targeted protocols to fade melasma, dark spots and uneven tone safely, paired with proper skin protection.</p>
+          <p>Targeted protocols to fade melasma, dark spots and uneven tone, safely.</p>
           <span class="tcard__tag">Brightening · Even Tone</span>
         </article>
         <article class="tcard reveal" style="--d:.1s">
           <p class="tcard__num">05</p><h3>Skin Boosters &amp; Rejuvenation</h3>
-          <p>Deep hydration and rejuvenation treatments that restore bounce, luminosity and healthy skin quality.</p>
+          <p>Deep hydration and rejuvenation that restore bounce, luminosity and healthy skin quality.</p>
           <span class="tcard__tag">Hydration · Radiance</span>
         </article>
         <article class="tcard reveal" style="--d:.16s">
           <p class="tcard__num">06</p><h3>Blemish &amp; Skin Care</h3>
-          <p>Doctor-led care for warts, skin tags, acne and other common concerns — treated safely and comfortably.</p>
+          <p>Doctor-led care for warts, skin tags, acne and other common concerns.</p>
           <span class="tcard__tag">Clear · Comfortable</span>
         </article>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section" id="process">
-      <div class="section__head">
-        <p class="kicker">Your Visit</p>
-        <h2>Simple, considered, unhurried</h2>
-        <p>From first message to aftercare, every step is guided by a doctor and paced around you.</p>
-      </div>
-      <div class="steps">
-        <div class="step reveal" style="--d:.04s"><div class="step__num"></div><h3>Consult</h3><p>Book an appointment and meet Doc Genie for a full skin assessment and honest recommendations.</p></div>
-        <div class="step reveal" style="--d:.12s"><div class="step__num"></div><h3>Treat</h3><p>Receive your curated treatment in a calm, clinical-yet-luxurious setting, with your comfort first.</p></div>
-        <div class="step reveal" style="--d:.2s"><div class="step__num"></div><h3>Glow</h3><p>Follow a clear aftercare plan and watch your skin become clearer, brighter and naturally radiant.</p></div>
-      </div>
-    </section>
-
-    <!-- BRAND STATEMENT -->
-    <section class="quote">
-      <div class="quote__inner">
-        <img class="quote__mark reveal" src="assets/mark.png" alt="" aria-hidden="true" />
-        <blockquote class="reveal" style="--d:.1s">“Confidence starts with skin that feels like your own — cared for by a doctor who listens.”</blockquote>
-        <p class="quote__by reveal" style="--d:.2s">— The LeLuxe Dermsolutions promise</p>
       </div>
     </section>
 
@@ -206,7 +207,7 @@
         </div>
         <div class="footer__col">
           <h4>Explore</h4>
-          <a href="#about">About</a><a href="#treatments">Treatments</a><a href="#process">Your Visit</a><a href="#contact">Contact</a>
+          <a href="#about">About</a><a href="#treatments">Treatments</a><a href="#guests">For You</a><a href="#contact">Contact</a>
         </div>
         <div class="footer__col">
           <h4>Visit</h4>
