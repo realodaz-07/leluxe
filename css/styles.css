@@ -131,8 +131,10 @@ h3{font-weight:500}
   transition:transform 1s var(--ease)}
 .panel:hover .panel__img{transform:scale(1.05)}
 .panel__scrim{position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(40,24,28,.80) 0%,rgba(40,24,28,.18) 55%,rgba(40,24,28,.05) 100%)}
-.panel__inner{position:absolute;inset:auto 0 0 0;z-index:2;color:var(--cream);padding:clamp(1.4rem,2.2vw,2.4rem)}
+  background:linear-gradient(0deg,rgba(33,18,22,.92) 0%,rgba(33,18,22,.58) 34%,rgba(33,18,22,.22) 62%,rgba(33,18,22,.06) 100%)}
+.panel.is-active .panel__scrim{background:linear-gradient(0deg,rgba(33,18,22,.94) 0%,rgba(33,18,22,.66) 40%,rgba(33,18,22,.26) 72%,rgba(33,18,22,.08) 100%)}
+.panel__inner{position:absolute;inset:auto 0 0 0;z-index:2;color:var(--cream);padding:clamp(1.4rem,2.2vw,2.4rem);
+  text-shadow:0 1px 14px rgba(20,10,12,.6)}
 .panel__idx{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.9rem;display:block;
   margin-bottom:.5rem;opacity:0;transition:opacity .4s}
 .panel.is-active .panel__idx{opacity:1}
@@ -143,7 +145,7 @@ h3{font-weight:500}
 .panel__lead{font-family:var(--sans);font-weight:500;text-transform:uppercase;letter-spacing:.2em;
   font-size:.6rem;color:var(--gold);margin-bottom:.8rem}
 .panel__list{list-style:none;display:flex;flex-direction:column;gap:.6rem;margin-bottom:1.6rem}
-.panel__list li{position:relative;padding-left:1.6rem;color:rgba(251,238,240,.9);font-size:.95rem}
+.panel__list li{position:relative;padding-left:1.6rem;color:rgba(251,238,240,.96);font-size:.95rem}
 .panel__list li::before{content:"✦";position:absolute;left:0;top:.05em;color:var(--gold);font-size:.75rem}
 
 /* ---------- section shell (treatments) ---------- */

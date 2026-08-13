@@ -25,15 +25,20 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  /* expanding panels — click to expand (one active at a time) */
+  /* expanding panels — expand on hover (one active at a time); tap on touch */
   var panels = document.querySelectorAll('[data-panel]');
+  var setActive = function (p) {
+    panels.forEach(function (x) { x.classList.remove('is-active'); });
+    p.classList.add('is-active');
+  };
   panels.forEach(function (p) {
+    p.addEventListener('mouseenter', function () { setActive(p); });
+    p.addEventListener('focusin', function () { setActive(p); });
     p.addEventListener('click', function (e) {
-      // let the CTA link work without hijacking, but still expand
+      // touch/keyboard: expand first tap; let CTA work once already open
       if (p.classList.contains('is-active') && e.target.closest('a')) return;
       if (e.target.closest('a') && !p.classList.contains('is-active')) e.preventDefault();
-      panels.forEach(function (x) { x.classList.remove('is-active'); });
-      p.classList.add('is-active');
+      setActive(p);
     });
   });
 
