@@ -123,10 +123,12 @@
   function longDate(d) { return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }); }
 
   function update() {
-    var ready = state.date && state.time;
-    summaryEl.textContent = ready
-      ? state.branch + ' branch · ' + longDate(state.date) + ' · ' + state.time
-      : 'Select a branch, date and time to continue.';
+    var hasSlot = state.date && state.time;
+    var hasDetails = nameEl.value.trim() && phoneEl.value.trim();
+    var ready = hasSlot && hasDetails;
+    if (!hasSlot) summaryEl.textContent = 'Select a branch, date and time to continue.';
+    else if (!hasDetails) summaryEl.textContent = 'Add your name and mobile number to confirm.';
+    else summaryEl.textContent = state.branch + ' branch · ' + longDate(state.date) + ' · ' + state.time;
     confirmEl.disabled = !ready;
   }
 
