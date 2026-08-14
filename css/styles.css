@@ -277,3 +277,11 @@ html.js .reveal.in{opacity:1;transform:none}
 .bk__actions .btn{flex:1;min-width:8rem}
 .bk__send[aria-disabled="true"]{opacity:.45;pointer-events:none}
 @media (max-width:600px){.bk__actions .btn{flex:1 1 100%}}
+
+/* booking: confirm/done states */
+.bk__send:disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
+.bk__done{text-align:center;padding:1.5rem 0 .5rem}
+.bk__check{width:3.4rem;height:3.4rem;margin:0 auto 1.1rem;border-radius:50%;display:grid;place-items:center;
+  background:var(--gold);color:var(--white);font-size:1.6rem}
+.bk__done-title{font-size:1.7rem;margin-bottom:.7rem}
+.bk__done-msg{color:var(--ink-soft);font-size:.98rem;max-width:30ch;margin:0 auto 1.7rem;line-height:1.6}

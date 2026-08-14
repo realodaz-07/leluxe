@@ -241,13 +241,14 @@
 
   <!-- BOOKING MODAL -->
   <div class="modal" id="booking" aria-hidden="true">
-    <div class="modal__backdrop" data-close></div>
+    <div class="modal__backdrop"></div>
     <div class="modal__card" role="dialog" aria-modal="true" aria-label="Book a consultation">
       <button class="modal__close" type="button" aria-label="Close" data-close>&times;</button>
       <p class="modal__eyebrow">LeLuxe Dermsolutions</p>
       <h3 class="modal__title">Book a Consultation</h3>
       <p class="modal__sub">Choose a branch, date and time — we'll confirm your slot by phone or Viber.</p>
 
+      <div id="bkForm">
       <div class="bk__field">
         <span class="bk__label">Branch</span>
         <div class="bk__branches" id="bkBranches">
@@ -279,9 +280,16 @@
       <p class="bk__summary" id="bkSummary">Select a branch, date and time to continue.</p>
 
       <div class="bk__actions">
-        <a class="btn btn--gold bk__send" id="bkSms" href="#" aria-disabled="true">Send via SMS / Viber</a>
-        <a class="btn btn--ghost" id="bkFb" href="https://m.me/leluxe.dermsolutions" target="_blank" rel="noopener">Messenger</a>
-        <a class="btn btn--ghost" id="bkCall" href="tel:+639171043624">Call</a>
+        <button type="button" class="btn btn--ghost" data-close>Back</button>
+        <button type="button" class="btn btn--gold bk__send" id="bkConfirm" disabled>Confirm Booking</button>
+      </div>
+      </div><!-- /#bkForm -->
+
+      <div class="bk__done" id="bkDone" hidden>
+        <div class="bk__check" aria-hidden="true">&#10003;</div>
+        <h3 class="bk__done-title">Request received</h3>
+        <p class="bk__done-msg" id="bkDoneMsg"></p>
+        <button type="button" class="btn btn--gold" data-close>Done</button>
       </div>
     </div>
   </div>

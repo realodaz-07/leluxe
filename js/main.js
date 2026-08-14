@@ -71,7 +71,10 @@
   var summaryEl = document.getElementById('bkSummary');
   var nameEl = document.getElementById('bkName');
   var phoneEl = document.getElementById('bkPhone');
-  var smsEl = document.getElementById('bkSms');
+  var confirmEl = document.getElementById('bkConfirm');
+  var formEl = document.getElementById('bkForm');
+  var doneEl = document.getElementById('bkDone');
+  var doneMsgEl = document.getElementById('bkDoneMsg');
   var branchesEl = document.getElementById('bkBranches');
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var SLOTS = ['12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM'];
@@ -117,23 +120,24 @@
     next.disabled = (y === maxDate.getFullYear() && m === maxDate.getMonth());
   }
 
+  function longDate(d) { return d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' }); }
+
   function update() {
     var ready = state.date && state.time;
-    if (ready) {
-      var ds = state.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
-      summaryEl.textContent = state.branch + ' branch · ' + ds + ' · ' + state.time;
-      var msg = 'Hi LeLuxe! I\'d like to book a consultation.\n'
-        + 'Branch: ' + state.branch + '\nDate: ' + ds + '\nTime: ' + state.time
-        + (nameEl.value ? '\nName: ' + nameEl.value : '')
-        + (phoneEl.value ? '\nMobile: ' + phoneEl.value : '');
-      smsEl.href = 'sms:' + PHONE + '?&body=' + encodeURIComponent(msg);
-      smsEl.setAttribute('aria-disabled', 'false');
-    } else {
-      summaryEl.textContent = 'Select a branch, date and time to continue.';
-      smsEl.href = '#';
-      smsEl.setAttribute('aria-disabled', 'true');
-    }
+    summaryEl.textContent = ready
+      ? state.branch + ' branch · ' + longDate(state.date) + ' · ' + state.time
+      : 'Select a branch, date and time to continue.';
+    confirmEl.disabled = !ready;
   }
+
+  confirmEl.addEventListener('click', function () {
+    if (confirmEl.disabled) return;
+    doneMsgEl.textContent = 'Your consultation request for the ' + state.branch + ' branch on '
+      + longDate(state.date) + ' at ' + state.time + (nameEl.value ? ', under ' + nameEl.value : '')
+      + ' has been noted. We\'ll confirm your slot shortly by phone or Viber.';
+    formEl.hidden = true;
+    doneEl.hidden = false;
+  });
 
   branchesEl.addEventListener('click', function (e) {
     var b = e.target.closest('.bk__branch'); if (!b) return;
@@ -150,6 +154,8 @@
 
   function open() {
     lastFocus = document.activeElement;
+    state.date = null; state.time = null;
+    formEl.hidden = false; doneEl.hidden = true;
     renderCal(); renderSlots(); update();
     modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
