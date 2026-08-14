@@ -285,3 +285,4 @@ html.js .reveal.in{opacity:1;transform:none}
   background:var(--gold);color:var(--white);font-size:1.6rem}
 .bk__done-title{font-size:1.7rem;margin-bottom:.7rem}
 .bk__done-msg{color:var(--ink-soft);font-size:.98rem;max-width:30ch;margin:0 auto 1.7rem;line-height:1.6}
+.bk__error{color:#b23a4b;font-size:.82rem;margin:-.6rem 0 1rem;line-height:1.4}

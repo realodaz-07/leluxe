@@ -75,6 +75,7 @@
   var formEl = document.getElementById('bkForm');
   var doneEl = document.getElementById('bkDone');
   var doneMsgEl = document.getElementById('bkDoneMsg');
+  var errEl = document.getElementById('bkErr');
   var branchesEl = document.getElementById('bkBranches');
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var SLOTS = ['12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM','6:00 PM','7:00 PM','8:00 PM'];
@@ -124,19 +125,33 @@
 
   function update() {
     var hasSlot = state.date && state.time;
-    var hasDetails = nameEl.value.trim() && phoneEl.value.trim();
-    var ready = hasSlot && hasDetails;
-    if (!hasSlot) summaryEl.textContent = 'Select a branch, date and time to continue.';
-    else if (!hasDetails) summaryEl.textContent = 'Add your name and mobile number to confirm.';
-    else summaryEl.textContent = state.branch + ' branch · ' + longDate(state.date) + ' · ' + state.time;
-    confirmEl.disabled = !ready;
+    summaryEl.textContent = hasSlot
+      ? state.branch + ' branch · ' + longDate(state.date) + ' · ' + state.time
+      : 'Select a branch, date and time to continue.';
+    confirmEl.disabled = !hasSlot;
+  }
+
+  function validPHMobile(v) {
+    return /^(\+?63|0)9\d{9}$/.test(v.replace(/[\s\-()]/g, ''));
   }
 
   confirmEl.addEventListener('click', function () {
     if (confirmEl.disabled) return;
+    var name = nameEl.value.trim();
+    var nameOk = name.length >= 2 && /[a-zA-Z]/.test(name);
+    var phoneOk = validPHMobile(phoneEl.value);
+    if (!nameOk || !phoneOk) {
+      var need = [];
+      if (!nameOk) need.push('your full name');
+      if (!phoneOk) need.push('a valid Philippine mobile number (e.g. 0917 123 4567)');
+      errEl.textContent = 'Please enter ' + need.join(' and ') + '.';
+      errEl.hidden = false;
+      return;
+    }
+    errEl.hidden = true;
     doneMsgEl.textContent = 'Your consultation request for the ' + state.branch + ' branch on '
-      + longDate(state.date) + ' at ' + state.time + (nameEl.value ? ', under ' + nameEl.value : '')
-      + ' has been noted. We\'ll confirm your slot shortly by phone or Viber.';
+      + longDate(state.date) + ' at ' + state.time + ', under ' + name
+      + ', has been noted. We\'ll confirm your slot shortly by phone or Viber.';
     formEl.hidden = true;
     doneEl.hidden = false;
   });
@@ -152,12 +167,14 @@
       renderCal();
     });
   });
-  [nameEl, phoneEl].forEach(function (el) { el.addEventListener('input', update); });
+  [nameEl, phoneEl].forEach(function (el) {
+    el.addEventListener('input', function () { errEl.hidden = true; update(); });
+  });
 
   function open() {
     lastFocus = document.activeElement;
     state.date = null; state.time = null;
-    formEl.hidden = false; doneEl.hidden = true;
+    formEl.hidden = false; doneEl.hidden = true; errEl.hidden = true;
     renderCal(); renderSlots(); update();
     modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
